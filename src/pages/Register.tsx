@@ -10,6 +10,7 @@ import { auth } from '../firebase'
 import { useAuth } from '../context/AuthContext'
 import { useEffect } from 'react'
 import errorIcon from '../assets/icon-error.svg'
+import { FirebaseError } from 'firebase/app'
 
 export async function registerAction({ request }: { request: Request }) {
   const formData = await request.formData()
@@ -30,7 +31,7 @@ export async function registerAction({ request }: { request: Request }) {
       })
     }
   } catch (err) {
-    switch (err.code) {
+    switch ((err as FirebaseError).code) {
       case 'auth/email-already-in-use':
         return { error: 'Email already registerd with an account' }
       default:
