@@ -1,4 +1,9 @@
-import { Link, useNavigate, useRouteError } from 'react-router-dom'
+import {
+  Link,
+  isRouteErrorResponse,
+  useNavigate,
+  useRouteError,
+} from 'react-router-dom'
 import homeIcon from '../assets/icon-home.svg'
 import ArrowUturnLeftIcon from '../assets/icon-arrow-uturn-left.svg'
 
@@ -10,7 +15,9 @@ export default function Error() {
     <main className='wrapper mt-8 text-white'>
       <h2 className='text-lg md:text-2xl'>Uh oh! We've got a problem.</h2>
       <p className='text-sm text-[#cacde8] md:text-xl'>
-        {error.message || error.statusText}
+        {isRouteErrorResponse(error)
+          ? error.statusText
+          : (error as Error).message}
       </p>
       <div className='mt-6 flex items-center gap-6 text-xs md:text-base'>
         <button
