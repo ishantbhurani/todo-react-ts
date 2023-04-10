@@ -10,6 +10,7 @@ import { useEffect, useRef } from 'react'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase'
 import errorIcon from '../assets/icon-error.svg'
+import { FirebaseError } from 'firebase/app'
 
 export async function loginAction({ request }: { request: Request }) {
   const formData = await request.formData()
@@ -23,7 +24,7 @@ export async function loginAction({ request }: { request: Request }) {
       user.password.toString()
     )
   } catch (err) {
-    switch (err.code) {
+    switch ((err as FirebaseError).code) {
       case 'auth/wrong-password':
         return { error: 'Invalid credentials' }
       case 'auth/user-not-found':
