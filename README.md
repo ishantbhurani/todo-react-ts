@@ -32,15 +32,25 @@ Users should be able to:
 ### Screenshot
 
 ![Register New User](./screenshots/register.png)
+
 ![Login Page (Dark Mode)](./screenshots/login-dark.png)
+
 ![Login Page filled (Light Mode)](./screenshots/login-filled-light.png)
+
 ![Todo List (Dark Mode)](./screenshots/todo-list-dark.png)
+
 ![Todo List (Light Mode)](./screenshots/todo-list-light.png)
+
 ![All Todos completed](./screenshots/empty-todo.png)
+
 ![Login Page (Mobile)](./screenshots/login-mobile.png)
+
 ![Todo List (Mobile)](./screenshots/todo-list-mobile.png)
+
 ![Login Error](./screenshots/login-error.png)
+
 ![Login Error](./screenshots/login-error-2.png)
+
 ![Register New User Error](./screenshots/register-error.png)
 
 ### Links
