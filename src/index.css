@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: hsl(40, 11%, 96%) url('./assets/bg-mobile-light.jpg') no-repeat;
+  }
+
+  .dark body {
+    background: hsl(235, 21%, 11%) url('./assets/bg-mobile-dark.jpg') no-repeat;
+  }
+
+  @media screen and (min-width: 375px) {
+    body {
+      background-image: url('./assets/bg-desktop-light.jpg');
+    }
+
+    .dark body {
+      background-image: url('./assets/bg-desktop-dark.jpg');
+    }
+  }
+}
+
+@layer utilities {
+  .wrapper {
+    @apply container mx-auto max-w-xs sm:w-11/12 sm:max-w-[540px];
+  }
+}
